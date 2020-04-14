@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class OpnieuwPraktijkopdracht2 extends Applet {
     Button okButton;
-    Integer tableNumber;
+    Integer tableNumber = 1;
 
     public void init() {
 
@@ -17,27 +17,27 @@ public class OpnieuwPraktijkopdracht2 extends Applet {
     }
 
     public void paint(Graphics g) {
-        int x = 50;
-        int y = 50;
         int sommetje;
-        tableNumber = 0;
-        for (int i = 1; i < 11; i++) {
+        int yAs = 0;
+        for (int i = 0; i < 11; i++) {
         sommetje = tableNumber * i;
-       g.drawString("" + sommetje, x, y);
-       y += 15;
-       tableNumber++;
-            System.out.println("" + tableNumber);
+       g.drawString("" + i +"  "+tableNumber+sommetje, 15, yAs);
+       yAs += 15;
+            System.out.println("in de forloop" + tableNumber);
         }
     }
 
     class okBAL implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-        if ( tableNumber >= 9) {
+            System.out.println("okBAL = clicked");
+            System.out.println("+" + tableNumber);
+        if ( tableNumber > 9) {
             tableNumber = 1;
         }
-        else {tableNumber++;
+        else {
+            tableNumber++;
         }
-            repaint();
+        repaint();
         }
         }
     }
