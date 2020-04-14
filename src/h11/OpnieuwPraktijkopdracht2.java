@@ -20,7 +20,7 @@ public class OpnieuwPraktijkopdracht2 extends Applet {
         int x = 50;
         int y = 50;
         int sommetje;
-        tableNumber = 0;
+        tableNumber = 0; // hier zet je tableNumber op 0, dus is ie altijd 0 als je het scherm gaat tekenen
         for (int i = 1; i < 11; i++) {
         sommetje = tableNumber * i;
        g.drawString("" + sommetje, x, y);
